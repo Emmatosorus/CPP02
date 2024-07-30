@@ -27,6 +27,7 @@ void	Fixed::bar(const float f) const {
 }
 
 void	Fixed::bar(const Fixed & s) const {
+	(void) s;
 	std::cout << "Sample is sample XD" << std::endl;
 	return ;
 }
