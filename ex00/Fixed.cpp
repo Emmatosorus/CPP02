@@ -1,8 +1,17 @@
 #include "Fixed.h"
 #include <iostream>
 
-Fixed::Fixed() {
+Fixed::Fixed()
+{
 	std::cout << "Default constructor called" << std::endl;
+	this->n = 0;
+	return ;
+}
+
+Fixed::Fixed( Fixed const & s )
+{
+	std::cout << "Copy constructor called" << std::endl;
+	this->n = s.n;
 	return ;
 }
 
@@ -11,23 +20,21 @@ Fixed::~Fixed() {
 	return ;
 }
 
-void	Fixed::bar(const char c) const {
-	std::cout << "char is " << c << std::endl;
-	return ;
+Fixed & Fixed::operator=( Fixed const & thing )
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->n = thing.n;
+	return *this;
 }
 
-void	Fixed::bar(const int i) const {
-	std::cout << "int is " << i << std::endl;
-	return ;
+int	Fixed::getRawBits( void ) const
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return (this->n);
 }
 
-void	Fixed::bar(const float f) const {
-	std::cout << "float is " << f << std::endl;
-	return ;
-}
-
-void	Fixed::bar(const Fixed & s) const {
-	(void) s;
-	std::cout << "Sample is sample XD" << std::endl;
-	return ;
+void	Fixed::setRawBits( int const raw )
+{
+	std::cout << "setRawBits member function called" << std::endl;
+	this->n = raw;
 }
