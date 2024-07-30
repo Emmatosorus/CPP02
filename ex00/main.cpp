@@ -18,7 +18,7 @@ int main( void ) {
 
 	a.bar('a');
 	a.bar(42);
-	a.bar(3.14);
+	a.bar(3.14f);
 	a.bar(b);
 	return 0;
 }
